@@ -15,7 +15,7 @@ class GeradorDados:
                 'nome': self.falso.name(),
                 'sobrenome': self.falso.last_name(),
                 'numero_conta': self.falso.random_int(min=1000, max=9999),
-                'valor_transacao': self.falso.random_float(min=0, max=1000),
+                'valor_transacao': self.falso.random_digit(),
                 'data': data
             }
             dados.append(dados_linha)
