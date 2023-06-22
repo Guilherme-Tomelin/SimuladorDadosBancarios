@@ -37,8 +37,8 @@ class JanelaPrincipal(QMainWindow):
         self.botao_gerar_dados = QPushButton("Gerar Dados")
         self.botao_gerar_dados.clicked.connect(self.click_gerar_dados)
 
-        self.botao_escolher_diretorio = QPushButton("Escolher Diretório")
-        self.botao_escolher_diretorio.clicked.connect(self.click_escolher_diretorio)
+        # self.botao_escolher_diretorio = QPushButton("Escolher Diretório")
+        # self.botao_escolher_diretorio.clicked.connect(self.click_escolher_diretorio)
 
         layout = QVBoxLayout()
         layout.addWidget(QLabel("Quantidade de Linhas:"))
@@ -46,7 +46,7 @@ class JanelaPrincipal(QMainWindow):
         layout.addWidget(QLabel("Data:"))
         layout.addWidget(self.caixa_data)
         layout.addWidget(self.botao_gerar_dados)
-        layout.addWidget(self.botao_escolher_diretorio)
+        #layout.addWidget(self.botao_escolher_diretorio)
 
         widget = QWidget()
         widget.setLayout(layout)
@@ -85,7 +85,7 @@ class JanelaPrincipal(QMainWindow):
         dialogo.setFileMode(QFileDialog.Directory)
         if dialogo.exec_():
             diretorio = dialogo.selectedFiles()[0]
-            nome_arquivo = diretorio + "/saida.csv"
+            nome_arquivo = diretorio + "/" + escritor_csv.gera_nome_saida()
             escritor_csv.escrever_dados(dados, nome_arquivo)
 
             QMessageBox.information(self, "Concluído", "Dados gerados e salvos em arquivo CSV.")
