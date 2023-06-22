@@ -1,0 +1,1 @@
+#Módulo contendo a lógica de geração de dados simulados.
