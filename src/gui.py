@@ -77,10 +77,10 @@ class JanelaPrincipal(QMainWindow):
             QMessageBox.critical(self, "Erro", "A quantidade de linhas deve ser um número válido.")
             return
 
-        gerador_dados = GeradorDados()
-        escritor_csv = EscritorCSV()
-        dados = gerador_dados.gerar_dados(num_linhas, data)
+        gerador_dados = GeradorDados()  # Instância do gerador de dados
+        dados = gerador_dados.gerar_dados(num_linhas, data)  # Gera os dados simulados
 
+        escritor_csv = EscritorCSV()
         dialogo = QFileDialog(self)
         dialogo.setFileMode(QFileDialog.Directory)
         if dialogo.exec_():
